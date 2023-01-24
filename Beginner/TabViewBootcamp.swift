@@ -6,7 +6,7 @@ struct TabViewBootcamp: View {
     
     var body: some View {
         TabView(selection: $selectedTab) {
-            HomeView(selectedTab: $selectedTab).tabItem {
+            Home2View(selectedTab: $selectedTab).tabItem {
                 Image(systemName: "house.fill")
                 Text("Home")
             }
@@ -16,6 +16,7 @@ struct TabViewBootcamp: View {
                 Text("Browse")
             }
             .tag(1)
+            .badge(10)
             Text("PROFILE TAB").tabItem {
                 Image(systemName: "person.fill")
                 Text("Profile")
@@ -32,7 +33,7 @@ struct TabViewBootcamp_Previews: PreviewProvider {
     }
 }
 
-struct HomeView: View {
+struct Home2View: View {
     
     @Binding var selectedTab: Int
     
