@@ -7,16 +7,19 @@ struct ContentView: View {
         TabView(selection: $selectedTab) {
             HomeView()
                 .tabItem {
+                    Image(systemName: "house.fill")
                     Text("Home")
                 }
                 .tag(0)
             BeginnerView()
                 .tabItem {
+                    Image(systemName: "figure.strengthtraining.functional")
                     Text("Beginner")
                 }
                 .tag(1)
             IntermediateView()
                 .tabItem {
+                    Image(systemName: "figure.stairs")
                     Text("Intermediate")
                 }
                 .tag(2)
@@ -30,15 +33,19 @@ struct HomeView: View {
     
     var body: some View {
         NavigationView {
-            VStack(alignment: .leading, spacing: 15) {
-                Text("A collection of demo views created through the course of following Nick Sarno's SwiftUI beginner series")
+            VStack(alignment: .leading, spacing: 5) {
+                Text("A collection of views created while following SwiftfulThinking's beginner bootcamp series for learning SwiftUI.")
+                Text("Links are provided below for the GitHub repository containing this code, in addition to the aforementioned YouTube playlist.")
+                Divider()
+                    .padding(.top, 15)
                 HStack {
                     Link("GitHub", destination: githubUrl!)
                     Link("Playlist", destination: playlistUrl!)
                 }
+                .padding(.top, 15)
                 Spacer()
             }
-            .padding(10)
+            .padding(20)
             .navigationTitle("SwiftBootcamp")
         }
     }
